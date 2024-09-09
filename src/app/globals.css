@@ -19,7 +19,6 @@ svg {
 }
 
 main {
-  padding: 10px;
   background-color: #f7d379;
   height: 100vh;
 }
@@ -36,4 +35,12 @@ p {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.padding-10px {
+  padding: 10px;
+}
+
+.padding-inline-10px {
+  padding-inline: 1rem;
 }

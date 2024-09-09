@@ -1,10 +1,21 @@
+.main-bg {
+  background-color: black;
+}
 
 .welcome {
   font-family: "Bebas Neue", sans-serif;
+  color:#ffffff;
   font-size: 4rem;
+  padding-inline: 10px;
 }
 
-.flex-50px {
+.line-break-card {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+/* .flex-50px {
   display: flex;
   gap: 10px;
-}
+} */
