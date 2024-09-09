@@ -1,9 +1,10 @@
-.main {
-  padding: 10px;
-  min-height: 100vh;
-}
 
 .welcome {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4rem;
+}
+
+.flex-50px {
+  display: flex;
+  gap: 10px;
 }
