@@ -16,22 +16,41 @@ export default function Home() {
                   <p>
                     <b>WEB PROJECTS</b>
                   </p>
-                  <div>
-                    <p>
-                      <b>Origamid</b>
-                    </p>
-                    <Link href="https://html-css-origamid.vercel.app/">
+                  <div className="line-break">
+                    <div>
                       <p>
-                        Lobo - (HTML/CSS){" "}
-                        <span className="p-size-small">(2023)</span>
+                        <b>Alura</b>
                       </p>
-                    </Link>
-                    <Link href="/">
+                      <a href="https://aluraplus-one-ashen.vercel.app/">
+                        <p>
+                          Alura+ - (HTML/CSS){" "}
+                          <span className="p-size-small">(2023)</span>
+                        </p>
+                      </a>
+                      <a href="https://alurabooks-fawn-sigma.vercel.app/">
+                        <p>
+                          Alura Book - (HTML/CSS){" "}
+                          <span className="p-size-small">(2023)</span>
+                        </p>
+                      </a>
+                    </div>
+                    <div>
                       <p>
-                        BikCraft (HTML/CSS/JS)
-                        <span className="p-size-small">(2023)</span>
+                        <b>Origamid</b>
                       </p>
-                    </Link>
+                      <a href="https://html-css-origamid.vercel.app/">
+                        <p>
+                          Lobo - (HTML/CSS){" "}
+                          <span className="p-size-small">(2023)</span>
+                        </p>
+                      </a>
+                      <a href="/">
+                        <p>
+                          BikCraft (HTML/CSS/JS)
+                          <span className="p-size-small">(2023)</span>
+                        </p>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </Card>
