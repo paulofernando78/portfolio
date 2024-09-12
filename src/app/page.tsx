@@ -44,7 +44,7 @@ export default function Home() {
                           <span className="p-size-small">(2023)</span>
                         </p>
                       </a>
-                      <a href="/">
+                      <a href="https://origamid-bikcraft-cyan.vercel.app/">
                         <p>
                           BikCraft (HTML/CSS/JS)
                           <span className="p-size-small">(2023)</span>
