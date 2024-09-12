@@ -9,13 +9,8 @@
   padding-inline: 10px;
 }
 
-.line-break-card {
+.flex-50px {
   display: flex;
-  flex-direction: column;
-  gap: .7rem;
+  gap: 30px;
+  flex-wrap: wrap;
 }
-
-/* .flex-50px {
-  display: flex;
-  gap: 10px;
-} */
