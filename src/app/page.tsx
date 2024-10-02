@@ -14,6 +14,14 @@ export default function Home() {
             <div className="line-break">
               <Card>
                 <p>
+                  <b>LESSONS</b>
+                </p>
+              </Card>
+              <div>
+                <a href="https://html-css-js-hub.vercel.app/">HTML / CSS / JS Hub</a>
+              </div>
+              <Card>
+                <p>
                   <b>WEB PROJECTS</b>
                 </p>
               </Card>
@@ -53,8 +61,8 @@ export default function Home() {
                   </a>
                   <a href="https://origamid-bikcraft-final.vercel.app/">
                     <p>
-                      BikCraft Final (HTML/CSS/JS)
-                      <span className="p-size-small">(2024)</span>
+                      BikCraft
+                      <span className="p-size-small"> (2024)</span>
                     </p>
                   </a>
                 </div>
