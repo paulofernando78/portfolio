@@ -7,7 +7,7 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "Portfolio",
+  title: "Paulo Fernando Silva",
   description: "Projects",
 };
 
