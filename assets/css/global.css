@@ -1,0 +1,14 @@
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.625rem;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+}
+
+.line-break {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
