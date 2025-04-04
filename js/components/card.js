@@ -13,10 +13,22 @@ class Card extends HTMLElement {
     style.textContent = `
       .card {
         width: 100%;
-        padding: 10px;
+        padding: 8px;
         border: 1px solid white;
         border-radius: 5px;
-        margin-bottom: 1.125rem
+        margin-bottom: 1.125rem;
+        display: grid;
+        grid-template-columns: 150px 1fr
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px
+      }
+
+      .title, .description {
+        padding-left: 10px
       }
 
       .title {
@@ -24,17 +36,22 @@ class Card extends HTMLElement {
       }
 
       .description {
-        font-size: 1rem
+        font-size: 1rem;
       }
+
     `;
     shadow.appendChild(style);
 
     const cards = [
       {
+        img: "/assets/img/dbec-thumbnail.svg",
+        alt: "Thumbnail",
         title: "Daily Basis English Course",
         description: "Lessons of English for my private Students.",
       },
       {
+        img: "",
+        alt: "Thumbnail",
         title: "Cyber Wheel",
         description: "A fake futuristc bike shop.",
       },
@@ -46,17 +63,28 @@ class Card extends HTMLElement {
       card.classList.add("card");
       shadow.appendChild(card);
 
+      // Image
+      const img = document.createElement("img");
+      img.src = item.img;
+      img.alt = item.alt;
+      card.appendChild(img);
+
+      // Content
+      const content = document.createElement("div");
+      card.appendChild(content)
+      
       // title
       const title = document.createElement("h1");
       title.classList.add("title");
       title.textContent = item.title;
-      card.appendChild(title);
-
+      content.appendChild(title)
+      
       // description
       const description = document.createElement("h3");
-      description.classList.add("description")
+      description.classList.add("description");
       description.textContent = item.description;
-      card.appendChild(description);
+      content.appendChild(description)
+      
     });
   }
 }
