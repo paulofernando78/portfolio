@@ -3,47 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/assets/css/reset.css" />
-    <link rel="stylesheet" href="/assets/css/global.css" />
-    <link rel="stylesheet" href="/assets/css/variables.css" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-
+    <link rel="stylesheet" href="/css/global.css" />
+    <script type="module" src="/js/index.js" defer></script>
     <title>Paulo Fernando's Den</title>
   </head>
-  <body>
+  <body class="line-break">
     <main>
-      <button>Dark Mode</button>
+      <h1 class="top-phrase">Hey, I'm Paulo. What's shaking?</h1>
       <div class="main-container">
-        <h1>Hey, I'm Paulo. What's shaking?</h1>
-        <img src="/assets/img/meLinkedIn.webp" alt="Picture of myself" />
+        <div class="img-wrapper">
+          <img src="/assets/img/me.jpg" alt="Picture of myself" />
+        </div>
       </div>
-    </main >
-    <!-- About -->
-    <div class="line-break">
-      <section>
-        <div class="about-container">
-          <h2>What I'm all about</h2>
-          <p>
-            I'm an aspiring front-end developer with a passion for creating and
-            building things. I'm always looking for new ways to improve my skills
-            and learn new things.
-          </p>
-        </div>
-      </section>
-      <!-- Projects -->
-      <section class="projects-container line-break">
-        <h2>Projects</h2>
-        <div class="project">
-          <a href="https://www.dbec.com.br/"><h3>Daily Basis English Course</h3></a>
-          <p>Lessons of English for my private Students.</p>
-        </div>
-        <div class="project">
-          <a href="https://cyberwheel-js.vercel.app/"><h3>Cyber Wheel</h3></a>
-          <p>A fake futuristc bike shop.</p>
-        </div>
-      </section>
-    </div>
+      <!-- About -->
+      <div class="about-container">
+        <h2>What I'm all about</h2>
+        <p>
+          I'm an aspiring front-end developer with a passion for creating and
+          building things. I'm always looking for new ways to improve my skills
+          and learn new things.
+        </p>
+      </div>
+    </main>
+    <!-- Projects -->
+    <section class="line-break">
+      <h1>Projects</h1>
+      <wc-card></wc-card>
+    </section>
   </body>
 </html>
