@@ -44,13 +44,15 @@ class Card extends HTMLElement {
 
     const cards = [
       {
+        link: "www.dbec.com.br",
         img: "/assets/img/dbec-thumbnail.svg",
         alt: "Thumbnail",
         title: "Daily Basis English Course",
         description: "Lessons of English for my private Students.",
       },
       {
-        img: "",
+        link: "https://cyberwheel-js.vercel.app/",
+        img: "/assets/img/cyberwheel-thumbnail.webp",
         alt: "Thumbnail",
         title: "Cyber Wheel",
         description: "A fake futuristc bike shop.",
@@ -58,10 +60,15 @@ class Card extends HTMLElement {
     ];
 
     cards.forEach((item) => {
+      // Link
+      const link = document.createElement("a")
+      link.href = item.link
+      shadow.appendChild(link);
+      
       // Card
       const card = document.createElement("div");
       card.classList.add("card");
-      shadow.appendChild(card);
+      link.appendChild(card)
 
       // Image
       const img = document.createElement("img");
