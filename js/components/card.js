@@ -11,24 +11,29 @@ class Card extends HTMLElement {
 
     const style = document.createElement("style"); /*css*/
     style.textContent = `
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 250px);
+        gap: 15px;
+      }
+    
       .card {
-        width: 100%;
-        padding: 8px;
+        width: 250px;
+        height: 195px;
         border: 1px solid white;
         border-radius: 5px;
         margin-bottom: 1.125rem;
-        display: grid;
-        grid-template-columns: 150px 1fr
+        display: flex;
+        flex-direction: column;
       }
 
       img {
         width: 100%;
         height: auto;
-        border-radius: 5px
       }
 
-      .title, .description {
-        padding-left: 10px
+      .content {
+        padding: 10px
       }
 
       .title {
@@ -44,31 +49,36 @@ class Card extends HTMLElement {
 
     const cards = [
       {
-        link: "www.dbec.com.br",
+        link: "https://www.dbec.com.br",
         img: "/assets/img/dbec-thumbnail.svg",
         alt: "Thumbnail",
-        title: "Daily Basis English Course",
+        // title: "Daily Basis English Course",
         description: "Lessons of English for my private Students.",
       },
       {
         link: "https://cyberwheel-js.vercel.app/",
         img: "/assets/img/cyberwheel-thumbnail.webp",
         alt: "Thumbnail",
-        title: "Cyber Wheel",
+        // title: "Cyber Wheel",
         description: "A fake futuristc bike shop.",
       },
     ];
 
+    // Container
+    const container = document.createElement("div");
+    container.classList.add("container")
+    shadow.appendChild(container);
+    
     cards.forEach((item) => {
       // Link
-      const link = document.createElement("a")
-      link.href = item.link
-      shadow.appendChild(link);
-      
+      const link = document.createElement("a");
+      link.href = item.link;
+      container.appendChild(link)
+
       // Card
       const card = document.createElement("div");
       card.classList.add("card");
-      link.appendChild(card)
+      link.appendChild(card);
 
       // Image
       const img = document.createElement("img");
@@ -78,20 +88,20 @@ class Card extends HTMLElement {
 
       // Content
       const content = document.createElement("div");
-      card.appendChild(content)
-      
+      content.classList.add("content");
+      card.appendChild(content);
+
       // title
-      const title = document.createElement("h1");
-      title.classList.add("title");
-      title.textContent = item.title;
-      content.appendChild(title)
-      
+      // const title = document.createElement("h1");
+      // title.classList.add("title");
+      // title.textContent = item.title;
+      // content.appendChild(title);
+
       // description
       const description = document.createElement("h3");
       description.classList.add("description");
       description.textContent = item.description;
-      content.appendChild(description)
-      
+      content.appendChild(description);
     });
   }
 }
