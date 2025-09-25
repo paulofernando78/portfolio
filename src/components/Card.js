@@ -12,16 +12,38 @@ class Card extends HTMLElement {
     const css = document.createElement("style");
     /*css*/
     css.textContent = `
-      .container {
+      .card {
         border: var(--border);
-        box-shadow: var(--box-shadow)
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: var(--padding)
+      }
+
+      .label {
+        display: block
       }
     `;
     this.shadowRoot.appendChild(css);
 
-    const card = document.createElement("div");
-    card.textContent = "Test"
+      // getAttribute
+    const cardLabel = this.getAttribute("label")
+    const imgSrc = this.getAttribute("img")
+    const linkHref = this.getAttribute("link")
+
+    // Card
+    const card = document.createElement("a");
+    card.classList.add("card")
+    card.href = linkHref
     this.shadowRoot.appendChild(card);
+
+    const label = document.createElement("span");
+    label.classList.add("label")
+    label.textContent = cardLabel
+    card.appendChild(label);
+
+    const image = document.createElement("img");
+    image.src = imgSrc
+    card.appendChild(image);
   }
 }
 
