@@ -1,62 +1,57 @@
-import cssImportsPath from "/src/css/imports.css?inline";
+import styleImports from "/src/css/imports.css?inline";
+
+const css = /*css*/ `
+  .card {
+    width: 100%;
+    height: 100%;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+  }
+
+  .inner-card {
+    padding: var(--padding);
+  }
+
+  .label {
+    font-weight: bold;
+    margin-bottom: 16px
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    aspect-ratio: 16 / 9
+  }
+`;
 
 class Card extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+  }
 
-    const cssImports = document.createElement("style");
-    cssImports.textContent = cssImportsPath;
-    this.shadowRoot.appendChild(cssImports);
+  connectedCallback() {
+    // getAttribute
+    const iframeAttr = this.getAttribute("iframe");
+    const linkAttr = this.getAttribute("link");
+    const labelAttr = this.getAttribute("label");
+    const descAttr = this.getAttribute("description");
 
-    const css = document.createElement("style");
-    /*css*/
-    css.textContent = `
-      .card {
-        width: 300px;
-        border: var(--border);
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-        padding: var(--padding);
-        display: flex;
-        flex-direction: column;
-        gap: 5px
-      }
-
-      .label {
-        display: block;
-        text-align: center;
-        font-weight: bold
-      }
+    this.shadowRoot.innerHTML = /* html*/ `
+    <style>${styleImports} ${css}</style>
+    <div class="card">
+      <iframe src="${iframeAttr}"></iframe>
+      <div class="inner-card">
+        <a href="${linkAttr}" class="label" >${labelAttr}</a>
+        <p>${descAttr}</p>     
+      </div>
+    </div>
     `;
-    this.shadowRoot.appendChild(css);
-
-      // getAttribute
-    const cardLabel = this.getAttribute("label")
-    const imgSrc = this.getAttribute("img")
-    const imgAlt = this.getAttribute("alt")
-    const linkHref = this.getAttribute("link")
-    const desc = this.getAttribute("description")
-
-    // Card
-    const card = document.createElement("a");
-    card.classList.add("card")
-    card.href = linkHref
-    this.shadowRoot.appendChild(card);
-
-    const label = document.createElement("span");
-    label.classList.add("label")
-    label.textContent = cardLabel
-    card.appendChild(label);
-
-    const image = document.createElement("img");
-    image.src = imgSrc
-    image.alt = imgAlt
-    card.appendChild(image);
-
-    const description = document.createElement("p");
-    description.textContent = desc
-    card.appendChild(description);
   }
 }
 
