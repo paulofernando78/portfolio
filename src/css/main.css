@@ -14,10 +14,23 @@ body {
   padding: 5px;
 }
 
+.container__profile-img {
+  width: 300px;
+  border-radius: 50%;
+  outline: 5px solid white;
+  margin: 50px auto;
+
+}
+
+.container__title {
+  margin-block: 20px;
+  text-align: center;
+}
+
 .card__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
 }
 
 @media (max-width: 768px) {
