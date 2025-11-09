@@ -9,7 +9,8 @@ const css = /*css*/ `
     box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
-    gap: 5px
+    gap: 5px;
+    overflow: hidden
   }
 
   .inner-card {
@@ -23,7 +24,7 @@ const css = /*css*/ `
 
   iframe {
     width: 100%;
-    height: 300px;
+    height: 200px;
     border: none;
     aspect-ratio: 16 / 9
   }
