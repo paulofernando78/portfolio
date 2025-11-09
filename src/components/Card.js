@@ -26,7 +26,7 @@ const css = /*css*/ `
     width: 100%;
     height: 200px;
     border: none;
-    aspect-ratio: 16 / 9
+    aspect-ratio: 16 / 9;
   }
 `;
 

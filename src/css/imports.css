@@ -1,3 +1,8 @@
-@import "./main.css";
 @import "./reset.css";
-@import "./index.css"
+@import "./index.css";
+
+/* Base */
+@import "./base/typography.css";
+
+/* Utilities */
+@import "./utilities/spacing.css"

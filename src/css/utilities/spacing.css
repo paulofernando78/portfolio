@@ -1,0 +1,9 @@
+:root {
+  --padding: 5px
+}
+
+.line-break {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
