@@ -1,4 +1,5 @@
 .presentation__title-img-wrapper {
+  margin: 50px 30px 0 30px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   place-items: center;
@@ -7,18 +8,32 @@
 
 .presentation__role {
   display: block;
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-family: "Stack Sans Notch", sans-serif;
   font-weight: bold;
 }
 
 .presentation__role--blue {
-  color: blue;
+  color: #252525;
+  text-shadow: 1px 1px 10px #2296F3;
+}
+
+.presentation__profile-img {
+  width: 200px;
+  border-radius: 50%;
+  outline: 5px solid white;
+  margin: 50px auto;
+
+}
+
+.presentation__card__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
 }
 
 .presentation__icon__wrapper {
   display: flex;
-  margin-bottom: 40px;
 }
 
 a svg {
@@ -26,8 +41,20 @@ a svg {
   fill: white;
 }
 
-.presentation__card__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+@media (max-width: 600px) {
+  .presentation__title-img-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .presentation__card__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .presentation__card__wrapper {
+    grid-template-columns: 1fr;
+  }
 }

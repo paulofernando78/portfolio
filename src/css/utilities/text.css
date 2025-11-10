@@ -1,0 +1,49 @@
+:root {
+  --text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.line-through {
+  text-decoration: line-through;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.phonetics, .part-of-speech {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.phonetics {
+  color: var(--blue-6);
+}
