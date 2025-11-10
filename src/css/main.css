@@ -9,14 +9,18 @@
 
 body {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 5px;
   background: #252525;
   font-family: "Poppins", sans-serif;
   color: white;
   padding: 5px;
+  border: 1px solid var(--gray-6);;
+  border-radius: var(--border-radius);
 }
 
 hr {
   margin: 10px;
-  
+  border: none;
+  height: 1px;
+  background-color: var(--gray-6);
 }

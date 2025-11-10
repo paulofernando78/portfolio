@@ -1,5 +1,38 @@
 :root {
-  --padding: 5px
+ --margin: 16px;
+ --padding: 5px;
+}
+
+.margin {
+ margin: var(--margin);
+}
+.margin-top {
+ margin-top: var(--margin);
+}
+.margin-right {
+ margin-right: var(--margin);
+}
+.margin-bottom {
+ margin-bottom: var(--margin);
+}
+.margin-left {
+ margin-left: var(--margin);
+}
+
+.padding {
+ padding: var(--padding);
+}
+.padding-top {
+ padding: var(--padding);
+}
+.padding-right {
+ padding: var(--padding);
+}
+.padding-bottom {
+ padding: var(--padding);
+}
+.padding-left {
+ padding: var(--padding);
 }
 
 .line-break {
