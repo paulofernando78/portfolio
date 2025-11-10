@@ -27,7 +27,8 @@
 }
 
 .presentation__role--blue {
-  color: #252525;
+  color: #2296f3;;
+  -webkit-text-stroke: 1px #2296f3;
   text-shadow: 2px 2px 10px #2296f3;
 }
 
