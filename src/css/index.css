@@ -36,7 +36,8 @@
 
 .presentation__card__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: repeat(3, 280px); */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 15px;
 }
 
@@ -49,7 +50,7 @@ a svg {
   fill: white;
 }
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .presentation__card__wrapper {
     grid-template-columns: 1fr 1fr;
   }
@@ -60,7 +61,7 @@ a svg {
     grid-template-columns: 1fr;
     margin-inline: 25px;
   }
-}
+} */
 
 @media (max-width: 680px) {
   .presentation__title-img-wrapper {
