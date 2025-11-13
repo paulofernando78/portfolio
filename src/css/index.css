@@ -50,23 +50,14 @@ a svg {
   fill: white;
 }
 
-/* @media (max-width: 900px) {
-  .presentation__card__wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 700px) {
-  .presentation__card__wrapper {
-    grid-template-columns: 1fr;
-    margin-inline: 25px;
-  }
-} */
-
 @media (max-width: 680px) {
   .presentation__title-img-wrapper {
     flex-direction: column-reverse;
-    align-items: center;
-    margin: 0;
+    margin-block: 30px;
+  }
+
+  .presentation__name,
+  .presentation__description .presentation__role { 
+    text-align: center;
   }
 }
