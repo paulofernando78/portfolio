@@ -9,12 +9,11 @@ const css = /*css*/ `
     box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
-    gap: 5px;
     overflow: hidden
   }
 
   .inner-card {
-    padding: var(--padding);
+    padding: 5px 5px 3px 8px;
   }
 
   .label {
@@ -38,7 +37,7 @@ class Card extends HTMLElement {
 
   connectedCallback() {
     // getAttribute
-    const iframeAttr = this.getAttribute("iframe");
+    const imgAttr = this.getAttribute("img");
     const linkAttr = this.getAttribute("link");
     const labelAttr = this.getAttribute("label");
     const descAttr = this.getAttribute("description");
@@ -46,7 +45,7 @@ class Card extends HTMLElement {
     this.shadowRoot.innerHTML = /* html*/ `
     <style>${styleImports} ${css}</style>
     <div class="card">
-      <iframe src="${iframeAttr}"></iframe>
+      <img src="${imgAttr}"/>
       <div class="inner-card">
         <a href="${linkAttr}" class="label" >${labelAttr}</a>
         <p>${descAttr}</p>     

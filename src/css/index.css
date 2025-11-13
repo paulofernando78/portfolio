@@ -1,22 +1,16 @@
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: var(--padding);
+  padding: 10px;
   border: 1px solid var(--gray-6);
   border-radius: var(--border-radius);
 }
 
 .presentation__title-img-wrapper {
-  margin: 25px 30px 0 30px;
+  margin: 25px 35px 0 35px;
   display: flex;
   align-items: center;
-  justify-content: center;
   font-size: 1.2rem;
-}
-
-.presentation__title-img-wrapper > * {
-  flex: 1;
-  margin: 30px;
 }
 
 .presentation__description .presentation__role {
@@ -33,7 +27,9 @@
 }
 
 .presentation__profile__img {
-  max-width: 300px;
+  /* max-width: 300px; */
+  min-width: 40%;
+  margin: 30px;
   border-radius: 50%;
   outline: 5px solid white;
 }
@@ -62,12 +58,14 @@ a svg {
 @media (max-width: 700px) {
   .presentation__card__wrapper {
     grid-template-columns: 1fr;
-    margin-inline: 50px;
+    margin-inline: 25px;
   }
 }
 
 @media (max-width: 680px) {
   .presentation__title-img-wrapper {
     flex-direction: column-reverse;
+    align-items: center;
+    margin: 0;
   }
 }
