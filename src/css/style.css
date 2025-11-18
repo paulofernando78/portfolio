@@ -1,4 +1,4 @@
-@import "./index.css";
+@import "/src/css/global.css";
 
 /* Base */
 @import "./base/reset.css";
@@ -12,4 +12,9 @@
 @import "./utilities/border.css";
 @import "./utilities/display.css";
 @import "./utilities/spacing.css";
-@import "./utilities/text.css"
+@import "./utilities/text.css";
+
+@import "./index.css";
+
+/* Components */
+@import "./components/card.css";
