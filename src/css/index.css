@@ -12,6 +12,10 @@ nav li {
   gap: 20px;
 }
 
+nav li:hover {
+  text-shadow: 0 0 15px var(--slate-4);
+}
+
 nav a {
   font-family: "Anton", sans-serif;
   font-size: 1.5rem;
