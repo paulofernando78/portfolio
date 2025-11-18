@@ -13,7 +13,7 @@ nav li {
 }
 
 nav a {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Anton", sans-serif;
   font-size: 1.5rem;
 }
 
@@ -35,7 +35,7 @@ nav a:not(:last-child):after {
 
 }
 
-.introduction__description .presentation__role {
+.introduction__description .introduction__role {
   display: block;
   font-size: 3.5rem;
   font-family: "Stack Sans Notch", sans-serif;
