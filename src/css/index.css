@@ -1,9 +1,22 @@
+header {
+  position: sticky;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  background-color: #252525;
+  border: 1px solid var(--gray-6);
+  border-radius: var(--border-radius);
+}
+
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid var(--gray-6);
-  border-radius: var(--border-radius);
+}
+
+nav li,
+h2 {
+  text-shadow: 0 0 5px var(--slate-4);
 }
 
 nav li {
@@ -12,13 +25,15 @@ nav li {
   gap: 20px;
 }
 
-nav li:hover {
-  text-shadow: 0 0 15px var(--slate-4);
-}
-
 nav a {
   font-family: "Anton", sans-serif;
   font-size: 1.5rem;
+  transition: 0.8s;
+}
+
+nav a:hover {
+  text-decoration: none;
+  text-shadow: 0 0 15px var(--slate-4);
 }
 
 nav a:not(:last-child):after {
@@ -39,9 +54,8 @@ nav a:not(:last-child):after {
   font-size: 1.2rem;
   margin: 30px 80px;
 
-  /* padding: 20px;
-  border: 1px solid;
-  border-radius: 5px */
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .introduction__title-img-wrapper img {
@@ -62,14 +76,13 @@ nav a:not(:last-child):after {
 }
 
 .introduction__profile__img {
-  border-radius: 50%;
-  outline: 5px solid white;
+  border-radius: 5px;
   width: 300px;
 }
 
 .card__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
 }
 
@@ -93,7 +106,7 @@ nav a:not(:last-child):after {
   }
 
   .introduction__title-img-wrapper img {
-    width: 200px;
+    width: 250px;
   }
 
   .introduction__profile__img {
