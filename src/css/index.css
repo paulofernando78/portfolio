@@ -33,10 +33,19 @@ nav a:not(:last-child):after {
 .introduction__title-img-wrapper {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
   justify-content: space-around;
+  gap: 40px;
+
+  font-size: 1.2rem;
   margin: 30px 80px;
 
+  /* padding: 20px;
+  border: 1px solid;
+  border-radius: 5px */
+}
+
+.introduction__title-img-wrapper img {
+  width: 40%;
 }
 
 .introduction__description .introduction__role {
@@ -78,9 +87,13 @@ nav a:not(:last-child):after {
   filter: invert(1);
 }
 
-@media (max-width: 680px) {
+@media (max-width: 700px) {
   .introduction__title-img-wrapper {
     flex-direction: column-reverse;
+  }
+
+  .introduction__title-img-wrapper img {
+    width: 200px;
   }
 
   .introduction__profile__img {
