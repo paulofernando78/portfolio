@@ -1,4 +1,4 @@
-import styleImports from "/src/css/style.css?inline";
+import styleImports from "@css/styles.css?inline";
 
 const styles = /* css */`
 .card__container {
