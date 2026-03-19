@@ -10,15 +10,31 @@ const styles = /* css */ `
    }
 
    #js {
-    animation: js 1s infinite alternate;
+    transform: translateY(-2px);
+    animation: js 1.8s infinite ease-in-out;
    }
 
     @keyframes js {
-      0% {
-        transform: translateX(0px)
+      0%   {
+        transform: translate(0, 0);
       }
-      100%{
-        transform: translateX(100px)
+      20%  {
+        transform: translate(5px, -12px) rotate(3deg);
+      }
+      40%  {
+        transform: translate(10px, 0);
+      }
+      50%  {
+        transform: translate(10px, 0);
+      }
+      60%  {
+        transform: translate(15px, -12px) rotate(3deg);
+      }
+      80%  {
+        transform: translate(20px, 0);
+      }
+      100% {
+        transform: translate(0, 0);
       }
     }
 `;
@@ -44,9 +60,9 @@ class SkillSVG extends HTMLElement {
         ${styles}
       </style>
       <div class="icon__wrapper">
-        <img src="/images/icons/html5.svg" alt="HTML5 icon" id="html5"/>
-        <img src="/images/icons/css3.svg" alt="CSS3 icon" id="css3"/>
-        <img src="/images/icons/javascript.svg" alt="Javascript icon" id="js"/>
+        <img src="/images/icons/html5.svg" alt="HTML5 icon" id="html5" />
+        <img src="/images/icons/css3.svg" alt="CSS3 icon" id="css3" />
+        <img src="/images/icons/javascript.svg" alt="Javascript icon" id="js" />
         <!-- <img src="/images/icons/react.svg" alt="React JS icon" /> -->
         <!-- <div class="icon__wrapper">
           <img src="/images/icons/nodejs.svg" alt="Node JS icon" />
