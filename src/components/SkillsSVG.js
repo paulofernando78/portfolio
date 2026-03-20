@@ -151,14 +151,15 @@ const styles = /* css */ `
 
   //! JS
   #js {
-    transform: translateY(-1px);
   }
-
+  
   #js-phrases::after {
     content: var(--js-text);
   }
-
+  
   #js {
+    width: 38px;
+    transform: translateY(-1px);
     filter: drop-shadow(0 0 3px yellow);
 
     animation-name: js-walk;
@@ -216,7 +217,7 @@ class SkillSVG extends HTMLElement {
       [htmlEl, "JS, WAKE UP!", 2000],
       [jsEl, "What?", 2000],
       [htmlEl, "Show time. Make the button interactive, would you?", 2000],
-      [jsEl, "Ok, darling", 2000],
+      [jsEl, "No problem.", 2000],
     ];
 
     const map = {
