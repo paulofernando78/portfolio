@@ -235,6 +235,9 @@ class SkillSVG extends HTMLElement {
       el.style.setProperty(map[el.id], `""`);
     }
 
+    setText(jsEl, "ZZzz...");
+    jsEl.dataset.active = "true"
+
     //! runDialogue
     function runDialogue(dialogue) {
       let i = 0;
@@ -289,7 +292,11 @@ class SkillSVG extends HTMLElement {
         </div>
         <div class="icon">
           <div id="js-phrases" class="balloons"></div>
-          <img src="/images/icons/javascript.svg" alt="Javascript icon" id="js" />
+          <img
+            src="/images/icons/javascript.svg"
+            alt="Javascript icon"
+            id="js"
+          />
         </div>
       </div>
     `;
