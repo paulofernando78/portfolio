@@ -4,12 +4,12 @@ const styles = /* css */`
 .card__container {
   display: grid;
   grid-template-rows: 1fr auto;
-  
   width: 100%;
 
-  border: var(--border);
+  border: 1px solid var(--gray-6);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
+  overflow: hidden
 }
 
 .card__img-wrapper {
@@ -61,7 +61,7 @@ class Card extends HTMLElement {
         <img src="${imgAttr}"/>
       </div>
       <div class="card__inner">
-        <a href="${linkAttr}" class="card__label" >${labelAttr}</a>
+        <a href="${linkAttr}" class="card__label" target="_blank">${labelAttr}</a>
         <p>${descAttr}</p>
     </div>
     `;

@@ -10,7 +10,7 @@ const styles = /* css */ `
   }
 
   .balloons {
-    position: relative
+    position: relative;
   }
   
   .balloons::after {
@@ -28,18 +28,17 @@ const styles = /* css */ `
     top: -50px;
 
     opacity: 0;
-    transition: opacity 0.3s ease
+    transition: opacity 0.3s ease;
   }
 
   #html5-phrases[data-active="true"]::after,
   #css3-phrases[data-active="true"]::after,
   #js-phrases[data-active="true"]::after {
-    opacity: 1
+    opacity: 1;
   }
   
   //! HTML5   
   #html5-phrases {}
-
 
   #html5-phrases::after {
     left: 0px;
@@ -47,7 +46,6 @@ const styles = /* css */ `
   }
   
   #html5 {
-    justify-item: center;
     filter: drop-shadow(0 0 3px red);
 
     animation-name: html5-walk;
@@ -93,7 +91,6 @@ const styles = /* css */ `
       transform: translate(100px, 0);
     }
   }
-  }
 
   //! CCS3
   
@@ -110,7 +107,8 @@ const styles = /* css */ `
     
     animation-name: css3-walk;
     animation-duration: 2s;
-    animation-iteration-count: forwards;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
     animation-delay: 20s;
   }
@@ -157,7 +155,6 @@ const styles = /* css */ `
   }
 
   #js-phrases::after {
-    left: -70px;
     content: var(--js-text);
   }
 
@@ -166,32 +163,21 @@ const styles = /* css */ `
 
     animation-name: js-walk;
     animation-duration: 2s;
-    animation-iteration-count: forwards;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-delay: 50s;
+    animation-delay: 20s;
   }
 
   @keyframes js-walk {
     0%   {
-      transform: translate(0, 0);
+      transform: rotate(0deg);
     }
-    20%  {
-      transform: translate(-5px, -12px) rotate(-3deg);
+    10% {
+      transform: rotate(-5deg);
     }
-    40%  {
-      transform: translate(-10px, 0);
-    }
-    50%  {
-      transform: translate(-10px, 0);
-    }
-    60%  {
-      transform: translate(-15px, -12px) rotate(-3deg);
-    }
-    80%  {
-      transform: translate(-20px, 0);
-    }
-    100% {
-      transform: translate(0, 0);
+    20%   {
+      transform: rotate(0deg);
     }
   }
 
@@ -246,17 +232,7 @@ class SkillSVG extends HTMLElement {
 
     //! clearDialogue
     function clearText(el) {
-      if (el.id === "html5-phrases") {
-        el.style.setProperty("--html5-text", `""`);
-      }
-
-      if (el.id === "css3-phrases") {
-        el.style.setProperty("--css3-text", `""`);
-      }
-
-      if (el.id === "js-phrases") {
-        el.style.setProperty("--js-text", `""`);
-      }
+      el.style.setProperty(map[el.id], `""`);
     }
 
     //! runDialogue
