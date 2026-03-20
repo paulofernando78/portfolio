@@ -21,7 +21,7 @@ const styles = /* css */ `
     padding: 1px 5px;
     font-size: 0.9rem;
     width: max-content;
-    min-height: 20px;
+    max-width: 200px; 
 
     display: inline-block;
     position: absolute;
@@ -150,8 +150,7 @@ const styles = /* css */ `
   }
 
   //! JS
-  #js {
-  }
+  #js {}
   
   #js-phrases::after {
     content: var(--js-text);
