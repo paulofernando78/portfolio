@@ -81,7 +81,7 @@ const styles = /* css */ `
     }
   }
 
-  .icon:first-child {
+  .icon.animate:first-child {
     animation-name: html5-walk;
     animation-duration: 2s;
     animation-delay: 4s;
@@ -200,7 +200,7 @@ const styles = /* css */ `
     }
   }
 
-  .icon:last-child {
+  .icon.animate:last-child {
      animation-name: js-walk;
     animation-duration: 2s;
     animation-iteration-count: 1;
@@ -249,18 +249,22 @@ class SkillSVG extends HTMLElement {
     const cssEl = root.querySelector("#css3-phrases");
     const jsEl = root.querySelector("#js-phrases");
 
+    const icons = root.querySelectorAll(".icon");
+    // start animation
+    icons.forEach((icon) => icon.classList.add("animate"));
+
     //! Phrases
     const dialogue = [
       [htmlEl, "Hey, CSS!", 3000],
-      [cssEl, "Yo, what's up?", 3000],
+      [cssEl, "Yo, what’s up?", 3000],
       [htmlEl, "Are ya busy?", 4000],
       [cssEl, "Not really. What do ya need?", 3000],
       [htmlEl, "I've made a button. Can ya add padding to it, please?", 3000],
       [cssEl, "Sure thing.", 3000],
-      [htmlEl, "Where's JS?", 3000],
-      [cssEl, "He's over there.", 3000],
+      [htmlEl, "Where’s JS?", 3000],
+      [cssEl, "He’s over there.", 3000],
       [htmlEl, "JS, WAKE UP!", 3000],
-      [jsEl, "What?", 3000],
+      [jsEl, "What’s going on?", 3000],
       [htmlEl, "Do me a favor.", 3000],
       [jsEl, "Yeah?", 3000],
       [htmlEl, "Make the button interactive, would you?", 3000],
@@ -293,12 +297,22 @@ class SkillSVG extends HTMLElement {
       function next() {
         // ...
         if (i >= dialogue.length) {
+          resetAnimations();
           // ...
           i = 0;
         }
 
         // ...
         const [el, text, duration] = dialogue[i];
+
+        if (i === 7) {
+          const cssIconEl = root.querySelector("#css3");
+          cssIconEl.style.transform = "rotateY(180deg)";
+
+          setTimeout(() => {
+            cssIconEl.style.transform = "";
+          }, 2500);
+        }
 
         // Show phrases
         setText(el, text);
@@ -320,6 +334,14 @@ class SkillSVG extends HTMLElement {
     }
 
     runDialogue(dialogue);
+
+    function resetAnimations() {
+      icons.forEach((icon) => {
+        icon.classList.remove("animate");
+        void icon.offsetWidth;
+        icon.classList.add("animate");
+      });
+    }
   }
 
   disconnectedCallback() {
