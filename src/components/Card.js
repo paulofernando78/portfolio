@@ -25,7 +25,7 @@ const styles = /* css */`
 
   .card__inner {
     border-top: 1px solid var(--gray-6);
-    padding: 5px 8px 13px 8px;
+    padding: 5px 8px 9px 8px;
     display: grid;
     gap: 12px
   }
