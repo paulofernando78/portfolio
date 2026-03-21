@@ -35,10 +35,17 @@ const styles = /* css */`
     margin-bottom: 16px;
   }
 
-  .tech-stack__card {
+  .tech-stack {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap
+  }
+  
+  .tech-stack__item {
     border: 1px solid var(--gray-6);
     border-radius: 5px;
     padding: 3px 6px;
+    white-space: nowrap;
   }
 `
 
@@ -58,6 +65,8 @@ class Card extends HTMLElement {
     const linkAttr = this.getAttribute("link");
     const labelAttr = this.getAttribute("label");
     const descAttr = this.getAttribute("description");
+    const techAttr = this.getAttribute("techStackItems");
+    const techStackItems = techAttr ? JSON.parse(techAttr) : []
 
     const cardContainer = document.createElement("div");
     cardContainer.className = "card__container";
@@ -74,7 +83,10 @@ class Card extends HTMLElement {
         <p>${descAttr}</p>
       </div>
       <div class="tech-stack">
-        <span class="tech-stack__item">...</span>
+      ${techStackItems.map(item => /* html*/`
+        <span class="tech-stack__item">${item}</span>
+        `
+      ).join("")}
       </div>
     </div>
     `;
