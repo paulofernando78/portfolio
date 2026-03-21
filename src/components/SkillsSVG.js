@@ -1,18 +1,18 @@
 import styleImports from "/src/css/styles.css?inline";
 
 const styles = /* css */ `
+  :host {
+    --step-x: clamp(5px, 1.2vw, 12px);
+    --step-x-reverse: calc(var(--step-x) * -1);
+  }
+  
   .icon__wrapper {
-    width: 50%;
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, clamp(70px, 22vw, 130px));
+    justify-content: center;
     place-items: center
   }
 
-  .balloons {
-    position: relative;
-  }
-  
   .balloons::after {
     background-color: var(--slate-8);
     color: var(--slate-2);
@@ -21,74 +21,96 @@ const styles = /* css */ `
     padding: 1px 5px;
     font-size: 0.9rem;
     width: max-content;
-    max-width: 200px; 
-
-    display: inline-block;
+    max-width: 145px; 
+    
     position: absolute;
-    top: -50px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
 
+    margin-bottom: 12px;
+    
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-
+  
   #html5-phrases[data-active="true"]::after,
   #css3-phrases[data-active="true"]::after,
   #js-phrases[data-active="true"]::after {
     opacity: 1;
   }
   
+  .icon {
+    position: relative;
+  }
+
   //! HTML5   
   #html5-phrases {}
 
   #html5-phrases::after {
-    left: 0px;
     content: var(--html5-text);
   }
   
   #html5 {
     filter: drop-shadow(0 0 3px red);
+  }
 
+  #html5-phrases[data-active="true"] + #html5 {
+    animation-name: html5-shake;
+    animation-duration: 0.5s;
+  }
+
+  @keyframes html5-shake {
+    0%   {
+      transform: rotate(0deg);
+    }
+    20%   {
+      transform: rotate(5deg);
+    }
+    40%   {
+      transform: rotate(0deg);
+    }
+    60%   {
+      transform: rotate(6deg);
+    }
+    80%   {
+      transform: rotate(0deg);
+    }
+    100%   {
+      transform: rotate(7deg);
+    }
+  }
+
+  .icon:first-child {
     animation-name: html5-walk;
     animation-duration: 2s;
+    animation-delay: 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-delay: 4s;
   }
 
   @keyframes html5-walk {
     0%   {
       transform: translate(0, 0);
     }
-    10%  {
-      transform: translate(10px, -12px) rotate(-3deg);
-    }
-    20%  {
-      transform: translate(20px, 0);
+    15%  {
+      transform: translate(calc(var(--step-x) * 2), -12px) rotate(-3deg);
     }
     30%  {
-      transform: translate(30px, -12px) rotate(-3deg);
+      transform: translate(calc(var(--step-x) * 3), 0);
     }
-    40%  {
-      transform: translate(40px, 0);
-    }
-    50%  {
-      transform: translate(50px, -12px) rotate(-3deg);
+    45%  {
+      transform: translate(calc(var(--step-x) * 4), -12px) rotate(-3deg);
     }
     60%  {
-      transform: translate(60px, 0);
+      transform: translate(calc(var(--step-x) * 5), 0); 
     }
-    70%  {
-      transform: translate(70px, -12px) rotate(-3deg);
+    75%  {
+      transform: translate(calc(var(--step-x) * 7), -12px) rotate(-3deg);
     }
-    80% {
-      transform: translate(80px, 0);
-    }
-    90%  {
-      transform: translate(90px, -12px) rotate(-3deg);
-    }
-    100% {
-      transform: translate(100px, 0);
+    100%  {
+      transform: translate(calc(var(--step-x) * 8.5), 0); 
     }
   }
 
@@ -97,55 +119,45 @@ const styles = /* css */ `
   #css3 {}
   
   #css3-phrases::after {
-    
-    left: 0px;
     content: var(--css3-text);
+  }
+
+  #css3-phrases[data-active="true"] + #css3 {
+    animation-name: css3-shake;
+    animation-duration: 0.5s;
   }
 
   #css3 {
     filter: drop-shadow(0 0 5px var(--blue-7));
-    
-    animation-name: css3-walk;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-    animation-delay: 20s;
   }
 
-  @keyframes css3-walk {
+  @keyframes css3-shake {
     0%   {
-      transform: translate(0, 0);
+      transform: rotate(0deg);
     }
-    10%  {
-      transform: translate(10px, -12px) rotate(-3deg);
+    20%   {
+      transform: rotate(7deg);
     }
-    20%  {
-      transform: translate(20px, 0);
+    40%   {
+      transform: rotate(0deg);
     }
-    30%  {
-      transform: translate(30px, -12px) rotate(-3deg);
+    60%   {
+      transform: rotate(5deg);
     }
-    40%  {
-      transform: translate(40px, 0);
+    80%   {
+      transform: rotate(0deg);
     }
-    50%  {
-      transform: translate(50px, -12px) rotate(-3deg);
+    100%   {
+      transform: rotate(7deg);
     }
-    60%  {
-      transform: translate(60px, 0);
+  }
+
+  @keyframes css3-rotate {
+    0%   {
+      transform: rotate(0deg);
     }
-    70%  {
-      transform: translate(70px, -12px) rotate(-3deg);
-    }
-    80% {
-      transform: translate(80px, 0);
-    }
-    90%  {
-      transform: translate(90px, -12px) rotate(-3deg);
-    }
-    100% {
-      transform: translate(100px, 0);
+    100%   {
+      transform: rotate(7deg);
     }
   }
 
@@ -155,35 +167,69 @@ const styles = /* css */ `
   #js-phrases::after {
     content: var(--js-text);
   }
+
+  #js-phrases[data-active="true"] + #js {
+    animation-name: js-shake;
+    animation-duration: 0.5s;
+  }
   
   #js {
     width: 38px;
     transform: translateY(-1px);
     filter: drop-shadow(0 0 3px yellow);
+  }
 
-    animation-name: js-walk;
+  @keyframes js-shake {
+    0%   {
+      transform: rotate(0deg);
+    }
+    20%   {
+      transform: rotate(5deg);
+    }
+    40%   {
+      transform: rotate(0deg);
+    }
+    60%   {
+      transform: rotate(6deg);
+    }
+    80%   {
+      transform: rotate(0deg);
+    }
+    100%   {
+      transform: rotate(7deg);
+    }
+  }
+
+  .icon:last-child {
+     animation-name: js-walk;
     animation-duration: 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-    animation-delay: 20s;
+    animation-delay: 30s;
   }
 
   @keyframes js-walk {
     0%   {
-      transform: rotate(0deg);
+      transform: translate(0, 0);
     }
-    10% {
-      transform: rotate(-5deg);
+    15%  {
+      transform: translate(calc(var(--step-x-reverse) * 2), -12px) rotate(-3deg);
     }
-    20%   {
-      transform: rotate(0deg);
+    30%  {
+      transform: translate(calc(var(--step-x-reverse) * 3), 0);
     }
-  }
-
-  @media (max-width: 700px) {
-    .icon__wrapper {
-      width: 70%;
+    45%  {
+      transform: translate(calc(var(--step-x-reverse) * 4), -12px) rotate(-3deg);
+    }
+    60%  {
+      transform: translate(calc(var(--step-x-reverse) * 5), 0); 
+    }
+    75%  {
+      transform: translate(calc(var(--step-x-reverse) * 7), -12px) rotate(-3deg);
+    }
+    100%  {
+      transform: translate(calc(var(--step-x-reverse) * 8), 0); 
     }
   }
 `;
@@ -205,18 +251,20 @@ class SkillSVG extends HTMLElement {
 
     //! Phrases
     const dialogue = [
-      [htmlEl, "Hey, CSS!", 2000],
-      [cssEl, "Yo, what's up?", 2000],
+      [htmlEl, "Hey, CSS!", 3000],
+      [cssEl, "Yo, what's up?", 3000],
       [htmlEl, "Are ya busy?", 4000],
-      [cssEl, "What do ya need?", 2000],
-      [htmlEl, "Can ya add a padding to my button, please?", 2000],
-      [cssEl, "Sure thing.", 2000],
-      [htmlEl, "Where's JS?", 2000],
-      [cssEl, "He's over there.", 2000],
-      [htmlEl, "JS, WAKE UP!", 2000],
-      [jsEl, "What?", 2000],
-      [htmlEl, "Show time. Make the button interactive, would you?", 2000],
-      [jsEl, "No problem.", 2000],
+      [cssEl, "Not really. What do ya need?", 3000],
+      [htmlEl, "I've made a button. Can ya add padding to it, please?", 3000],
+      [cssEl, "Sure thing.", 3000],
+      [htmlEl, "Where's JS?", 3000],
+      [cssEl, "He's over there.", 3000],
+      [htmlEl, "JS, WAKE UP!", 3000],
+      [jsEl, "What?", 3000],
+      [htmlEl, "Do me a favor.", 3000],
+      [jsEl, "Yeah?", 3000],
+      [htmlEl, "Make the button interactive, would you?", 3000],
+      [jsEl, "No problem.", 3000],
     ];
 
     const map = {
@@ -236,7 +284,7 @@ class SkillSVG extends HTMLElement {
     }
 
     setText(jsEl, "ZZzz...");
-    jsEl.dataset.active = "true"
+    jsEl.dataset.active = "true";
 
     //! runDialogue
     function runDialogue(dialogue) {
@@ -244,7 +292,10 @@ class SkillSVG extends HTMLElement {
 
       function next() {
         // ...
-        if (i >= dialogue.length) return;
+        if (i >= dialogue.length) {
+          // ...
+          i = 0;
+        }
 
         // ...
         const [el, text, duration] = dialogue[i];
