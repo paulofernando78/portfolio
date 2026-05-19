@@ -5,6 +5,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@css": fileURLToPath(new URL("./src/css", import.meta.url)),
+      "@components": fileURLToPath(new URL("./src/components", import.meta.url)),
     },
   },
 });

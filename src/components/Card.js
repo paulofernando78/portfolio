@@ -1,4 +1,5 @@
 import styleImports from "@css/styles.css?inline";
+import "@components/Link"
 
 const styles = /* css */`
   .card__container {
@@ -60,7 +61,6 @@ class Card extends HTMLElement {
   }
 
   connectedCallback() {
-    // getAttribute
     const imgAttr = this.getAttribute("img");
     const linkAttr = this.getAttribute("link");
     const labelAttr = this.getAttribute("label");
@@ -79,7 +79,7 @@ class Card extends HTMLElement {
     </div>
     <div class="card__inner">
       <div>
-        <a href="${linkAttr}" class="card__label" target="_blank">${labelAttr}</a>
+      <wc-link href="${linkAttr}" label="${labelAttr}"></wc-link>
         <p>${descAttr}</p>
       </div>
       <div class="tech-stack">

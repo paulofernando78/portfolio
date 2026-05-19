@@ -39,9 +39,6 @@ p {
   max-width: 65ch; /* Keeps paragraphs comfortably readable */
 }
 
-strong {
-  font-weight: var(--font-weight-bold);
-}
 em {
   font-style: italic;
 }
