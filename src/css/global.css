@@ -15,3 +15,8 @@ hr {
   height: 1px;
   background-color: var(--gray-6);
 }
+
+.border__bottom {
+  padding-bottom: 10px;
+  border-bottom: 1px solid gray
+}
